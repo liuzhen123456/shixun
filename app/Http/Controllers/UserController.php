@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\User;
 class UserController extends Controller
 {
     /**
@@ -13,7 +13,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        $userInfo=session('userInfo');
+        $user_id=$userInfo['user_id'];
+        $res=User::where('user_id',$user_id)->first();
+        //dump($user_id);die;
+        return view('user.index',['res'=>$res]);
     }
 
     /**
