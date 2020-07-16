@@ -10,15 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/a','LoginController@a');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('login','LoginController@login');
-Route::post('login_do','LoginController@login_do');
-Route::get('reg','LoginController@reg');
-Route::post('reg_do','LoginController@reg_do');
-Route::prefix('user')->group(function (){
+//注册登录
+Route::get('/login','LoginController@login');
+Route::post('/login_do','LoginController@login_do');
+Route::get('/reg','LoginController@reg');
+Route::post('/sreg_do','LoginController@reg_do');
+
+//用户个人中心
+Route::prefix('user')->middleware('checklogin')->group(function (){
    Route::get('index','UserController@index');
 });
 
+//测试
+
+Route::get('test','LoginController@test');

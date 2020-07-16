@@ -56,4 +56,12 @@ class LoginController extends Controller
         }
         //dump($res);die;
     }
+
+    //测试
+
+    public function test(){
+        $userInfo=session(['userInfo'=>null]);
+
+        dump($userInfo);
+    }
 }
