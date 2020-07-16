@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/login','LoginController@login');
 Route::post('/login_do','LoginController@login_do');
 Route::get('/reg','LoginController@reg');
-Route::post('/sreg_do','LoginController@reg_do');
+Route::post('/reg_do','LoginController@reg_do');
 
 //用户个人中心
 Route::prefix('user')->middleware('checklogin')->group(function (){

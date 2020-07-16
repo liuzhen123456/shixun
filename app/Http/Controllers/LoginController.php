@@ -37,6 +37,7 @@ class LoginController extends Controller
         $user_name=$request['user_name'];
         $user_pwd=$request['user_pwd'];
         $user_tel=$request['user_tel'];
+        $appid=uniqid();
         if($user_name==""){
             echo '用户名不能为空';die;
         }
@@ -50,7 +51,14 @@ class LoginController extends Controller
         if($user_rep){
             echo '用户名已存在';die;
         }
-        $res=User::insert($request);
+        $data=[
+            'user_name'=>$user_name,
+            'user_pwd'=>$user_pwd,
+            'user_tel'=>$user_tel,
+            'appid'=>$appid
+        ];
+        $res=User::insert($data);
+
         if($res){
             return redirect(url('login'));
         }
