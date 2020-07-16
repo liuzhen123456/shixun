@@ -18,4 +18,7 @@ Route::get('login','LoginController@login');
 Route::post('login_do','LoginController@login_do');
 Route::get('reg','LoginController@reg');
 Route::post('reg_do','LoginController@reg_do');
+Route::prefix('user')->group(function (){
+   Route::get('index','UserController@index');
+});
 

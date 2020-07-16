@@ -25,6 +25,8 @@ class LoginController extends Controller
                 echo '请输入正确的账号密码1';die;
             }
         }
+        session(['userInfo'=>$userInfo]);
+        return redirect('user/index');
     }
     //注册
     public function reg(){
@@ -49,7 +51,9 @@ class LoginController extends Controller
             echo '用户名已存在';die;
         }
         $res=User::insert($request);
-
-        dump($res);die;
+        if($res){
+            return redirect(url('login'));
+        }
+        //dump($res);die;
     }
 }
