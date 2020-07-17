@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\User;
-
+use Illuminate\Support\Facades\Redis;
 class LoginController extends Controller
 {
     //登录
