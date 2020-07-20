@@ -85,5 +85,9 @@ class UserController extends Controller
     {
         //
     }
-
+   
+    public function user()
+    {
+    	echo "兰凯泽大吊毛";
+    }
 }
