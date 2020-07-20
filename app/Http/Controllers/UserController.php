@@ -90,4 +90,10 @@ class UserController extends Controller
     {
     	echo "兰凯泽大吊毛";
     }
+	}
+	public function pay(){
+			echo"刘振是傻屌";
+	}
+
+
 }
