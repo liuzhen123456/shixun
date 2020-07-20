@@ -86,7 +86,7 @@ class UserController extends Controller
         //
 	}
 	public function pay(){
-		echo"刘振是傻屌";
+			echo"刘振是傻屌,说的对刘振就是傻屌";
 	}
 
 }
