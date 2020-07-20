@@ -84,6 +84,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
+	}
+	public function pay(){
+		echo"刘振是傻屌";
+	}
 
 }
